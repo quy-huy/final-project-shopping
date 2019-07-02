@@ -19,6 +19,9 @@ import { MyDoughnutChartComponent } from './my-doughnut-chart/my-doughnut-chart.
 import { MyRadarChartComponent } from './my-radar-chart/my-radar-chart.component';
 import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
 import {ChartsModule} from 'ng2-charts';
+
+import {AgGridModule} from 'ag-grid-angular';
+import { MyStatisticGridComponent } from './my-statistic-grid/my-statistic-grid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +32,16 @@ import {ChartsModule} from 'ng2-charts';
     MyBarChartComponent,
     MyDoughnutChartComponent,
     MyRadarChartComponent,
-    MyPieChartComponent
+    MyPieChartComponent,
+    MyStatisticGridComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
     ReactiveFormsModule, 
-    ChartsModule
+    ChartsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
